@@ -1,0 +1,21 @@
+int c,i;
+color[] shc={color(40,42,54), color(68, 71, 90), color(248, 248, 242), color(98, 114, 164), color(139, 233, 253), color(80, 250, 123), color(255,184,108), color(255,121,198), color(189, 147, 249), color(255, 85, 85)};
+void setup ( ) {
+  size(1920,1080,P2D);
+  img=loadImage(2016039.tif);
+  image(img,0,0);
+  tint(shc[0]);
+  i=1;
+}
+void draw( ) {
+  c= int(random(3,64));
+  beginShape();
+  while(i <= c){
+    vertex(random(0,width),random(0,height));
+    fill(shc[int(random(shc.length))]);
+    color(shc[int(random(shc.length))]);
+    i++;
+  }
+  smooth();
+  endShape(CLOSE);
+}
